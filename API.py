@@ -1,7 +1,6 @@
 from googleapiclient.discovery import build
 import config
 
-key = 'AIzaSyBG5vLsKCtF94glQUIeLnIXjGdrjHKtOWY'
 urlcopy = "https://www.youtube.com/watch?v="
 yt = build('youtube', 'v3', developerKey=key)
 videoid = []
