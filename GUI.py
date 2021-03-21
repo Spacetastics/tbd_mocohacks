@@ -1,5 +1,3 @@
-#Written By: Naadir Bakari
-#This Has New Names
 #This imports the library tkinter what is used to make the GUI
 import tkinter
 #This creates the main window
@@ -13,10 +11,10 @@ tkinter.Grid.columnconfigure(ResourceMachine, 1, weight=4)
 
 sRequest=tkinter.StringVar()
 
-bPhoto1=tkinter.PhotoImage(file="search button default.png")
-bPhoto2=tkinter.PhotoImage(file="search button hover.png")
-bPhoto3=tkinter.PhotoImage(file="go button default.png")
-bPhoto4=tkinter.PhotoImage(file="go button hover.png")
+bPhoto1=tkinter.PhotoImage(file="customButton1.png")
+bPhoto2=tkinter.PhotoImage(file="customButton2.png")
+bPhoto3=tkinter.PhotoImage(file="customButton3.png")
+bPhoto4=tkinter.PhotoImage(file="customButton4.png")
 #This is the search bar
 searchBar2 = tkinter.Entry(ResourceMachine,textvariable=sRequest, font=('calibre',10,'normal'))
 searchBar2.grid(row=1, column=1, sticky="nsew")
@@ -28,7 +26,7 @@ def sQuery():
    sRequest = searchBar2.get()
    print("You Searched:",sRequest)
 #This is the name for the search bar
-searchBar1 = tkinter.Label(ResourceMachine, text="What Is Your Topic?",font=("montserrat",17,"bold")).grid(row=0, column=1, sticky="nsew")
+searchBar1 = tkinter.Label(ResourceMachine, text="What Is Your Topic",font=("montserrat",17,"bold")).grid(row=0, column=1, sticky="nsew")
 #searchBar1.pack()
 #.grid(row=0, column=1)
 #searchBar2 = tkinter.Entry(ResourceMachine,textvariable=sRequest, font=('calibre',10,'normal')).grid(row=0, column=1)
@@ -56,10 +54,10 @@ choice1 = tkinter.StringVar()
 # C2= tkinter.Radiobutton(ResourceMachine,text="Between 4 and 20 Minutes", variable=choice1, value="medium",command=lChoice)
 # C3= tkinter.Radiobutton(ResourceMachine,text="Longer Than 20 Minutes", variable=choice1, value="long",command=lChoice)
 # C4= tkinter.Radiobutton(ResourceMachine,text="Any Length", variable=choice1, value="any",command=lChoice)
-C1= tkinter.Radiobutton(ResourceMachine,text="Shorter Than 4 Minutes", variable=choice1, value="short",font=("montserrat"))
-C2= tkinter.Radiobutton(ResourceMachine,text="Between 4 and 20 Minutes", variable=choice1, value="medium",font=("montserrat"))
-C3= tkinter.Radiobutton(ResourceMachine,text="Longer Than 20 Minutes", variable=choice1, value="long",font=("montserrat"))
-C4= tkinter.Radiobutton(ResourceMachine,text="Any Length", variable=choice1, value="any",font=("montserrat"))
+C1= tkinter.Radiobutton(ResourceMachine,text="Shorter Than 4 Minutes", variable=choice1, value="1",font=("montserrat"))
+C2= tkinter.Radiobutton(ResourceMachine,text="Between 4 and 20 Minutes", variable=choice1, value="2",font=("montserrat"))
+C3= tkinter.Radiobutton(ResourceMachine,text="Longer Than 20 Minutes", variable=choice1, value="3",font=("montserrat"))
+C4= tkinter.Radiobutton(ResourceMachine,text="Any Length", variable=choice1, value="4",font=("montserrat"))
 C1.grid(row=5,column=1)
 C2.grid(row=6,column=1)
 C3.grid(row=7,column=1)
@@ -140,4 +138,13 @@ def pNVal():
    print(sRequest)
 #This is what keeps the program constantly checking for new changes
 print(pageButton1)
+length = ""
+if choice1.get() == 1:
+    length="short"
+if choice1.get() == 2:
+    length="medium"
+if choice1.get() == 3:
+    length="long"
+else:
+    length="any"
 ResourceMachine.mainloop()
