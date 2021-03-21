@@ -2,7 +2,7 @@ from googleapiclient.discovery import build
 import config
 
 urlcopy = "https://www.youtube.com/watch?v="
-yt = build('youtube', 'v3', developerKey=key)
+yt = build('youtube', 'v3', developerKey=config.key)
 videoid = []
 
 topic = ""
